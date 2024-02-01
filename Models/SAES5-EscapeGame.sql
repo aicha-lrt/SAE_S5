@@ -12,7 +12,7 @@ CREATE TABLE User(
     User_First_Name VARCHAR(50),
     User_Last_Name VARCHAR(50),
     User_Mail_Adress VARCHAR(50),
-    User_Password VARCHAR(20),
+    User_Password VARCHAR(60),
     User_Created_Account DATE,
     User_Type ENUM('professionnel','particulier','joueur'),
     User_Path_Avatar VARCHAR(120)
@@ -34,7 +34,7 @@ CREATE TABLE Topic(
 CREATE TABLE Message(
     Message_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Message_Content VARCHAR(150),
-    Message_Date DATE,
+    Message_Date Datetime,
     Message_Type VARCHAR(50)
 );
 
