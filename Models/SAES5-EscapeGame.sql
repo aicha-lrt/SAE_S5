@@ -14,7 +14,7 @@ CREATE TABLE User(
     User_Mail_Adress VARCHAR(50),
     User_Password VARCHAR(60),
     User_Created_Account DATE,
-    User_Type ENUM('professionnel','particulier','joueur'),
+    User_Type ENUM('professionnel','particulier','joueur','admin'),
     User_Path_Avatar VARCHAR(120)
    );
 
