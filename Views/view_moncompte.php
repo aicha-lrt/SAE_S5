@@ -237,7 +237,7 @@
       </div>
   </div>
   <div class="mb-3">
-      <label for="mail" class="form-label">Mail</label>
+      <label for="mail" class="form-label">E-mail</label>
       <input type="email" class="form-control col-6" id="mail" name="mail" placeholder="name@example.com" value="<?= $_SESSION["mail"] ?>" disabled="disabled">
   </div>
   <!--<div class="mb-3">
