@@ -19,8 +19,9 @@
     <!-- --------------------------------------------------- -->
     <!-- Core Css -->
     <!-- --------------------------------------------------- -->
-    
+    <!--<link rel = "stylesheet" href="Content/css/test.css"/>-->
     <link  id="themeColors"  rel="stylesheet" href="Content/css/style.css" />
+    <link  id="themeColors"  rel="stylesheet" href="Content/css/modals.css" />
   </head>
 
   <body>
@@ -77,7 +78,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="?controller=chat" aria-expanded="false">
+                <a class="sidebar-link active" href="?controller=chat" aria-expanded="false">
                   <span>
                     <i class="ti ti-users"></i>
                   </span>
@@ -108,7 +109,7 @@
                 <span class="hide-menu">Autre</span>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link active" href="#" aria-expanded="false">
+                <a class="sidebar-link" href="?controller=moncompte" aria-expanded="false">
                   <span>
                     <i class="ti ti-user"></i>
                   </span>
@@ -139,7 +140,7 @@
         <!-- Header Start -->
         <!-- --------------------------------------------------- -->
         <header class="app-header"> 
-          <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <!--Burger Menu -->
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -165,7 +166,7 @@
                           <h5 class="mb-0 fs-5 fw-semibold">Mon Profile</h5>
                         </div>
                         <div class="d-flex align-items-center py-9 mx-7 border-bottom">
-                          <img src="<?= $_SESSION["User_Path_Avatar"]?>" class="rounded-circle" width="80" height="80" alt="" />
+                          <img src="<?= $_SESSION["User_Path_Avatar"]?>" class="rounded-circle" width="80" height="80" alt=""/>
                           <div class="ms-3">
                             <h5 class="mb-1 fs-3"><?= $_SESSION["User_First_Name"].' '.$_SESSION["User_Last_Name"]?></h5>
                             <p class="mb-0 d-flex text-dark align-items-center gap-2">
@@ -199,77 +200,65 @@
         <!-- Header End -->
         <!-- --------------------------------------------------- -->
         <div class="container-fluid">
-          <!-- --------------------------------------------------- -->
-          <!-- Link Start -->
-          <!-- --------------------------------------------------- -->
-          <div class="card bg-light-info shadow-none position-relative overflow-hidden">
-            <div class="card-body">
-             
-            </div>
-          </div>
-          <div class="image-container">
-            <img src="<?= $_SESSION["User_Path_Avatar"] ?>" class="rounded-circle" width="150" height="150" alt="" />
-        </div>
+          <h1>Table des Utilisateurs</h1></br>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="table-primary table-active" scope="col">Avatar</th>
+                <th class="table-primary table-active" scope="col">E-mail</th>
+                <th class="table-primary table-active" scope="col">Prénom</th>
+                <th class="table-primary table-active" scope="col">Nom</th>
+                <th class="table-primary table-active" scope="col">Type d'utilisateur</th>
+                <th class="table-primary table-active" scope="col">Date de création</th>
+                <th class="table-primary table-active" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php if (isset($users)){
+                  foreach ($users as $user)  {?>
+                  <tr>
+                    <td class="table-active"><img class="avatar" src="<?= $user["User_Path_Avatar"] ?>" alt="<?= $user["User_First_Name"].' '.$user["User_Last_Name"]?>" class="rounded-circle" width="50" height="50"/></td>
+                    <td class="userMail"><b><?= e($user["User_Mail_Adress"])?></b></td>
+                    <td class="userFName"><?= e($user["User_First_Name"])?></td>
+                    <td class="userLName"><?= e($user["User_Last_Name"])?></td>
+                    <td><?= ucfirst($user["User_Type"])?></td>
+                    <td><?= affichageCDate($user["User_Created_Account"])?></td>
+                    <td class="table-success">
+                        <?php if($user["User_Type"]!="admin") {?><button class="btn btn-danger suppr" id="<?= $user["User_ID"]?>" >Supprimer</button><?php }?>
+                    </td>
+                  </tr>
+              <?php }
+            } ?>
+            </tbody>
+          </table>
           
+            </div>
+
+
+            <div class="modal" id="supprModal">
+            <div class="modal-content-supprUser">
+                <span class="closeModal"><i class="bi bi-x"></i></span>
+                <h2>Supprimer un utilisateur</h2>
+                <p>Êtes-vous sûr de vouloir supprimer l'utilisateur <b id="userFName"></b> <b id="userLName"></b>, étant relier a l'e-mail <b id="userMail"></b> ?</p>
+                <form  method="POST" action="?controller=admin&action=supprUser" autocomplete="off">
+                    <div class="tab-box-button">
+                        <input type="hidden" id="supprBtnIdUser" name="id" value="0" />
+                        <input type="hidden" id="supprBtnMailUser" name="mail" value="" />
+                        <input type="submit" class="btn btn-danger" value="Supprimer"/>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+
         
-        <!-- --------------------------------------------------- -->
-            <!-- Info form -->
-        <!-- --------------------------------------------------- -->
-
-    <div class="infos-title">
-        <h4> Informations</h4>
-        <hr class="underline">
-    </div>
-    <form action="?controller=moncompte&action=changer_informations_profil" method="post">
-      <div class="input-body">
-        <div class="row">
-          <div class="col-md-6">
-              <div class="mb-3">
-                  <label for="firstName" class="form-label">Prénom</label>
-                  <input type="text" class="form-control col-6" id="firstName" name="firstName" value="<?= $_SESSION["User_First_Name"] ?>" placeholder="Elise" autocomplete="off" required maxlength=50>
-              </div>
           </div>
-      <div class="col-md-6">
-          <div class="mb-3">
-              <label for="lastName" class="form-label">Nom</label>
-              <input type="text" class="form-control col-6" id="lastName" name="lastName" value="<?= $_SESSION["User_Last_Name"] ?>" placeholder="Dupont" autocomplete="off" required maxlength=50>
-          </div>
-      </div>
-  </div>
-  <div class="mb-3">
-      <label for="mail" class="form-label">E-mail</label>
-      <input type="email" class="form-control col-6" id="mail" name="mail" placeholder="name@example.com" value="<?= $_SESSION["mail"] ?>" disabled="disabled">
-  </div>
-  <!--<div class="mb-3">
-      <label for="motdepasse" class="form-label">Mot de passe</label>
-      <input type="password" class="form-control col-6" id="motdepasse" name="motdepasse">
-  </div>
-  <div class="mb-3">
-      <label for="confirmpassword" class="form-label">Confirmez votre mot de passe</label>
-      <input type="password" class="form-control col-6" id="confirmpassword" name="confirmpassword">
-  </div>-->
-  <div class="button-container">
-      <input type="submit" class="btn custom-btn" value="Modifier">
-      <!--<button type="submit" class="btn custom-btn">Sign up</button>-->
-  </div>
-  
-    <?php if (isset($_SESSION["message"])) { ?>
-        <p> <?=  $_SESSION["message"] ?></p>
-    <?php }?>
+          
+        </div>       
+        </div>
 
-    </div>
-    </form>
-  <!--  <footer>
-      <p>@ 2024, Made by ❤️ X-cape gamyu for a better web </p>
-  </footer> -->
-
-        <!-- --------------------------------------------------- -->
-            <!-- Info form End -->
-        <!-- --------------------------------------------------- -->
-       
- 
-       
-       
 
     <!-- ---------------------------------------------- -->
     <!-- Import Js Files -->
@@ -285,7 +274,6 @@
     <script src="Content/js/app.init.js"></script>
     <script src="Content/js/app-style-switcher.js"></script>
     <script src="Content/js/sidebarmenu.js"></script>
-    <script src="Content/js/formulaire.js"></script>
     
     <script src="Content/js/custom.js"></script>
     <script src="Content/libs/prismjs/prism.js"></script>
@@ -293,5 +281,7 @@
     <!-- ---------------------------------------------- -->
     <!-- current page js files -->
     <!-- ---------------------------------------------- -->
+    <script src="Content/js/admin/liste_users.js"></script>
   </body>
 </html>
+

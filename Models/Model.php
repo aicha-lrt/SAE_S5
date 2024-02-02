@@ -98,11 +98,24 @@ class Model
 		return $retour;
 	} 
 
+	public function getMessagesId($userId){
+		$reqGet=$this->bd->prepare("SELECT Message_ID FROM envoie WHERE User_ID=:userId");
+		$reqGet->bindValue(':userId',$userId);
+		$reqGet ->execute();
+		return $reqGet->fetchAll(PDO::FETCH_ASSOC);
+	} 
+
 	public function getInfosUser($mail) {
 		$reqGet = $this->bd->prepare('SELECT * FROM User WHERE User_Mail_Adress=:mail');
 		$reqGet->bindValue(':mail', $mail);
 		$reqGet->execute();
 		return $reqGet->fetch(PDO::FETCH_ASSOC);
+	}
+
+	public function getUsers() {
+		$reqGet = $this->bd->prepare('SELECT * FROM User');
+		$reqGet->execute();
+		return $reqGet->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
 	
@@ -246,5 +259,48 @@ class Model
 		}
 		return false;
 	}*/
+
+
+
+	/**
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+	 * 						Les méthodes DELETE.  	  				   /
+	 * 												  				   /
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+	 */
+
+	public function deleteUser($id,$mail){ 
+		$infosC=$this->getInfosUser($mail);
+		if ($infosC["User_ID"]==$id){
+			$messages=$this->getMessagesId($id);
+
+			$reqDeleteEnvoie=$this->bd->prepare("DELETE FROM Envoie WHERE User_ID=:id");
+			$reqDeleteEnvoie->bindValue(':id',$id);
+			$reqDeleteEnvoie ->execute();
+
+			/*$messageDelete="DELETE FROM Message WHERE Message_ID IN (";
+			foreach ($messages as $message){
+				$messageDelete.="`".$message["Message_ID"]."`,";
+			}
+			$messageDelete.=')';*/
+			foreach ($messages as $message){
+				$reqDeleteMessage=$this->bd->prepare("DELETE FROM Message WHERE Message_ID=:mId");
+				$reqDeleteMessage->bindValue(':mId',$message["Message_ID"]);
+				$reqDeleteMessage ->execute();
+			}
+			
+				
+			$reqDeleteUser=$this->bd->prepare("DELETE FROM User WHERE User_ID=:id AND User_Mail_Adress=:mail");
+			$reqDeleteUser->bindValue(':id',$id);
+			$reqDeleteUser->bindValue(':mail',$mail);
+			$reqDeleteUser ->execute();
+			return (bool) $reqDeleteEnvoie->rowCount() && (bool) $reqDeleteMessage->rowCount() && (bool) $reqDeleteUser->rowCount();
+		}
+
+		return false;
+		
+	}
+
+
 }
 	

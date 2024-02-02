@@ -1,5 +1,5 @@
 <?php
-$dsn='mysql:host=localhost;dbname=X-Cape-Gamyu';
+$dsn='mysql:host=localhost;dbname=x-capeGamyu';
 $login='root';
 $mdp='root';
 ?>

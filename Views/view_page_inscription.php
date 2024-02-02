@@ -74,7 +74,7 @@
                                 </div>
                               <div class="mb-4">
                                 <label for="password1" class="form-label">Mot de passe</label> <!-- Password -->
-                                <input type="password" class="form-control" id="password1" name="mdp" required minlength=6 maxlength=20 placeholder='Lettre majuscule et minuscule, chiffre, caractères spéciale (*,[,],",#,$,(,),+,:,;,{,},|,~,?) et de 6 a 20 caractères'>
+                                <input type="password" class="form-control" id="password1" name="mdp" required minlength=6 maxlength=20 placeholder='Autorisés : Lettre majuscule et minuscule, chiffre, caractères spéciale (*,[,],",#,$,(,),+,:,;,{,},|,~,?)'>
                               </div>
                               <div class="mb-4">
                                 <label for="password2" class="form-label">Confirmation du mot de passe</label> <!-- Password Confirmation -->
