@@ -92,15 +92,7 @@
                   </span>
                   <span class="hide-menu">Recherche</span>
                 </a>
-              </li>
-              <!--<li class="sidebar-item">
-                <a class="sidebar-link" href="./chat.html" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-message-dots"></i>
-                  </span>
-                  <span class="hide-menu">Messagerie</span>
-                </a>
-              </li>-->        
+              </li>  
               <!-- ============================= -->
               <!-- Autre -->
               <!-- ============================= -->
@@ -347,7 +339,6 @@
     <!-- Import Js Files -->
     <!-- ---------------------------------------------- -->
     <script src="Content/libs/jquery/dist/jquery.min.js"></script>
-    <script src="Content/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="Content/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- ---------------------------------------------- -->
@@ -355,17 +346,12 @@
     <!-- ---------------------------------------------- -->
     <script src="Content/js/app.min.js"></script>
     <script src="Content/js/app.init.js"></script>
-    <script src="Content/js/app-style-switcher.js"></script>
-    <script src="Content/js/sidebarmenu.js"></script>
-    
     <script src="Content/js/custom.js"></script>
-    <script src="Content/libs/prismjs/prism.js"></script>
 
     <!-- ---------------------------------------------- -->
     <!-- current page js files -->
     <!-- ---------------------------------------------- -->
 
-
-        <script src="Content/js/spajeu.js"></script>
+    <script src="Content/js/spajeu.js"></script>
     </body>
 </html>

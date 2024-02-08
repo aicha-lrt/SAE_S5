@@ -12,9 +12,9 @@ CREATE TABLE User(
     User_First_Name VARCHAR(50),
     User_Last_Name VARCHAR(50),
     User_Mail_Adress VARCHAR(50),
-    User_Password VARCHAR(60),
+    User_Password VARCHAR(20),
     User_Created_Account DATE,
-    User_Type ENUM('professionnel','particulier','joueur','admin'),
+    User_Type ENUM('professionnel','particulier','joueur'),
     User_Path_Avatar VARCHAR(120)
    );
 
@@ -34,7 +34,7 @@ CREATE TABLE Topic(
 CREATE TABLE Message(
     Message_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     Message_Content VARCHAR(150),
-    Message_Date Datetime,
+    Message_Date DATE,
     Message_Type VARCHAR(50)
 );
 
@@ -74,6 +74,12 @@ CREATE TABLE Room (
 
 );
 
+CREATE TABLE Faq (
+    Faq_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Faq_Question VARCHAR(150),
+    Faq_Response VARCHAR(150)
+);
+
 
 
 ---- Contraintes d'intégrités
@@ -86,3 +92,4 @@ ALTER TABLE Envoie ADD FOREIGN KEY(Message_ID) REFERENCES Message(Message_ID);
 ALTER TABLE Envoie ADD FOREIGN KEY(User_ID) REFERENCES User(User_ID);
 ALTER TABLE Relier ADD FOREIGN KEY(Game_ID) REFERENCES Game(Game_ID);
 ALTER TABLE Relier ADD FOREIGN KEY(Topic_ID) REFERENCES Topic(Topic_ID);
+

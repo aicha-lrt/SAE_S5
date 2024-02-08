@@ -6,24 +6,14 @@
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="handheldfriendly" content="true" />
-    <meta name="MobileOptimized" content="width" />
-    <meta name="description" content="Mordenize" />
-    <meta name="author" content="" />
-    <meta name="keywords" content="Mordenize" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--  Favicon -->
     <link rel="shortcut icon" type="image/png" href="Content/img/logos/logo-complet.png" />
     
     <!-- Core Css -->
     <link  id="themeColors"  rel="stylesheet" href="Content/css/style.css" />
-    <link  id="themeColors"  rel="stylesheet" href="Content/css/custom.css" />
   </head>
   <body>
-    <!-- Preloader -->
-    <div class="preloader">
-      <img src="Content/img/logos/logo-complet.png" alt="loader" class="lds-ripple img-fluid" />
-    </div>
     <!-- Preloader -->
     <div class="preloader">
       <img src="Content/img/logos/logo-complet.png" alt="loader" class="lds-ripple img-fluid" />
@@ -93,15 +83,7 @@
     
     <!--  Import Js Files -->
     <script src="Content/libs/jquery/dist/jquery.min.js"></script>
-    <script src="Content/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="Content/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!--  core files -->
-    <script src="Content/js/app.min.js"></script>
-    <script src="Content/js/app.init.js"></script>
-    <script src="Content/js/app-style-switcher.js"></script>
-    <script src="Content/js/sidebarmenu.js"></script>
-    <script src="Content/js/formulaire.js"></script>
-    
     <script src="Content/js/custom.js"></script>
   </body>
 </html>
