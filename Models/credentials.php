@@ -1,5 +1,5 @@
 <?php
-$dsn='mysql:host=localhost;dbname=x-capeGamyu';
+$dsn='mysql:host=localhost;dbname=Escape-Game';
 $login='root';
 $mdp='root';
 ?>
