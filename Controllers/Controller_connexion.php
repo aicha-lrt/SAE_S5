@@ -35,7 +35,7 @@ class Controller_connexion extends Controller{
             if (isset($_POST["mail"]) && trim($_POST["mail"]) !== "" && isset($_POST["mdp"]) && trim($_POST["mdp"]) !== "") {
                 
                 $password = $m->getPassword($_POST["mail"]);
-
+                $_SESSION["test"]=[$password !== false,password_verify($_POST["mdp"], $password['User_Password'])];
                 if ($password !== false && password_verify($_POST["mdp"], $password['User_Password'])) {
         
                     $_SESSION["connecte"] = true;

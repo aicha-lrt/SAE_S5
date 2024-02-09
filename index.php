@@ -10,7 +10,7 @@ require_once "Models/Model.php";
 require_once "Controllers/Controller.php";
 
 //Liste des contrôleurs -- A RENSEIGNER
-$controllers = ["accueil","inscription","connexion","chat","recherche","moncompte","jeu"];
+$controllers = ["accueil","inscription","connexion","chat","recherche","moncompte","jeu","admin"];
 //Nom du contrôleur par défaut-- A RENSEIGNER
 $controller_default = "accueil";
 

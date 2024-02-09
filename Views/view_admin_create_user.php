@@ -19,7 +19,7 @@
     <!-- --------------------------------------------------- -->
     <!-- Core Css -->
     <!-- --------------------------------------------------- -->
-    
+    <!--<link rel = "stylesheet" href="Content/css/test.css"/>-->
     <link  id="themeColors"  rel="stylesheet" href="Content/css/style.css" />
   </head>
 
@@ -77,7 +77,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="?controller=chat" aria-expanded="false">
+                <a class="sidebar-link active" href="?controller=chat" aria-expanded="false">
                   <span>
                     <i class="ti ti-users"></i>
                   </span>
@@ -108,7 +108,7 @@
                 <span class="hide-menu">Autre</span>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link active" href="#" aria-expanded="false">
+                <a class="sidebar-link" href="?controller=moncompte" aria-expanded="false">
                   <span>
                     <i class="ti ti-user"></i>
                   </span>
@@ -139,7 +139,7 @@
         <!-- Header Start -->
         <!-- --------------------------------------------------- -->
         <header class="app-header"> 
-          <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <!--Burger Menu -->
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -199,77 +199,59 @@
         <!-- Header End -->
         <!-- --------------------------------------------------- -->
         <div class="container-fluid">
-          <!-- --------------------------------------------------- -->
-          <!-- Link Start -->
-          <!-- --------------------------------------------------- -->
-          <div class="card bg-light-info shadow-none position-relative overflow-hidden">
-            <div class="card-body">
-             
-            </div>
-          </div>
-          <div class="image-container">
-            <img src="<?= $_SESSION["User_Path_Avatar"] ?>" class="rounded-circle" width="150" height="150" alt="" />
-        </div>
           
+        <h1>Créer des Utilisateurs</h1></br></br></br>
         
-        <!-- --------------------------------------------------- -->
-            <!-- Info form -->
-        <!-- --------------------------------------------------- -->
-
-    <div class="infos-title">
-        <h4> Informations</h4>
-        <hr class="underline">
-    </div>
-    <form action="?controller=moncompte&action=changer_informations_profil" method="post">
-      <div class="input-body">
-        <div class="row">
-          <div class="col-md-6">
-              <div class="mb-3">
-                  <label for="firstName" class="form-label">Prénom</label>
-                  <input type="text" class="form-control col-6" id="firstName" name="firstName" value="<?= $_SESSION["User_First_Name"] ?>" placeholder="Elise" autocomplete="off" required maxlength=50>
-              </div>
+          <form action="?controller=admin&action=create_user" method="POST" autocomplete="off">
+                              <!--<div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>-->
+                              <div class="mb-4">
+                                <label for="firstName" class="form-label">Prénom</label> <!-- First Name -->
+                                <input type="text" class="form-control" id="firstName" name="firstName" required maxlength=50 placeholder="Ex: Jeanne D'Arc. Les lettres, chiffres, espaces, les - et ' sont acceptés">
+                              </div>
+                              <div class="mb-4">
+                                <label for="lastName" class="form-label">Nom</label> <!-- Last Name -->
+                                <input type="text" class="form-control" id="lastName" name="lastName" required maxlength=50 placeholder="Ex: Lair-Dupont. Les lettres, chiffres, espaces, les - et ' sont acceptés">
+                              </div>
+                              <div class="mb-4">
+                                <label for="eMail" class="form-label">E-mail</label> <!-- Mail -->
+                                <input type="email" class="form-control" id="eMail" name="mail" required maxlength=50 placeholder="Ex: exemple@gmail.com">
+                              </div>
+                              <div class="mb-4">
+                                <label for="types" class="form-label">Types</label>
+                                <select  class="form-control selectpicker" id="types" name="type">
+                                    <option value="particulier">Particulier</option>
+                                    <option value="joueur">Joueur</option>
+                                    <option value="professionnel">Professionnel</option>
+                                    <option value="admin">Admin</option>
+                                </select> 
+                                </div>
+                              <div class="mb-4">
+                                <label for="password1" class="form-label">Mot de passe</label> <!-- Password -->
+                                <input type="password" class="form-control" id="password1" name="mdp" required minlength=6 maxlength=20 placeholder='Autorisé : Lettres majuscules et minuscules, chiffres, caractères spéciaux (*,[,],",#,$,(,),+,:,;,{,},|,~,?)'>
+                              </div>
+                              <div class="mb-4">
+                                <label for="password2" class="form-label">Confirmation du mot de passe</label> <!-- Password Confirmation -->
+                                <input type="password" class="form-control" id="password2" name="mdp_confirm" required minlength=6 maxlength=20>
+                              </div>
+                              <div class="d-flex align-items-center justify-content-between mb-4">
+                                <input type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2" id="submitButton" value="Créer l'Utilisateur"> <!-- Register -->
+                              </div>
+                              <?php 
+                                if (isset($message)) { ?>
+                                <p> <?=  $message ?></p>
+                                <?php }
+                                ?>
+               </form>     
+            </div>
+        
           </div>
-      <div class="col-md-6">
-          <div class="mb-3">
-              <label for="lastName" class="form-label">Nom</label>
-              <input type="text" class="form-control col-6" id="lastName" name="lastName" value="<?= $_SESSION["User_Last_Name"] ?>" placeholder="Dupont" autocomplete="off" required maxlength=50>
-          </div>
-      </div>
-  </div>
-  <div class="mb-3">
-      <label for="mail" class="form-label">E-mail</label>
-      <input type="email" class="form-control col-6" id="mail" name="mail" placeholder="name@example.com" value="<?= $_SESSION["mail"] ?>" disabled="disabled">
-  </div>
-  <!--<div class="mb-3">
-      <label for="motdepasse" class="form-label">Mot de passe</label>
-      <input type="password" class="form-control col-6" id="motdepasse" name="motdepasse">
-  </div>
-  <div class="mb-3">
-      <label for="confirmpassword" class="form-label">Confirmez votre mot de passe</label>
-      <input type="password" class="form-control col-6" id="confirmpassword" name="confirmpassword">
-  </div>-->
-  <div class="button-container">
-      <input type="submit" class="btn custom-btn" value="Modifier">
-      <!--<button type="submit" class="btn custom-btn">Sign up</button>-->
-  </div>
-  
-    <?php if (isset($_SESSION["message"])) { ?>
-        <p> <?=  $_SESSION["message"] ?></p>
-    <?php }?>
+          
+        </div>       
+        </div>
 
-    </div>
-    </form>
-  <!--  <footer>
-      <p>@ 2024, Made by ❤️ X-cape gamyu for a better web </p>
-  </footer> -->
-
-        <!-- --------------------------------------------------- -->
-            <!-- Info form End -->
-        <!-- --------------------------------------------------- -->
-       
- 
-       
-       
 
     <!-- ---------------------------------------------- -->
     <!-- Import Js Files -->
@@ -281,11 +263,11 @@
     <!-- ---------------------------------------------- -->
     <!-- core files -->
     <!-- ---------------------------------------------- -->
+    <script src="Content/js/formulaire.js"></script>
     <script src="Content/js/app.min.js"></script>
     <script src="Content/js/app.init.js"></script>
     <script src="Content/js/app-style-switcher.js"></script>
     <script src="Content/js/sidebarmenu.js"></script>
-    <script src="Content/js/formulaire.js"></script>
     
     <script src="Content/js/custom.js"></script>
     <script src="Content/libs/prismjs/prism.js"></script>
@@ -295,3 +277,4 @@
     <!-- ---------------------------------------------- -->
   </body>
 </html>
+

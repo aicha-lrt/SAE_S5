@@ -47,7 +47,7 @@
                           <div class="col">
                             <h2 class="mb-3 fs-7 fw-bolder">Bienvenue !</h2><!-- Welcome -->
                             <p class=" mb-9">Bienvenue à bord mon ami !</p> <!--Welcome aboard my friend -->
-                            <form action="?controller=connexion&action=connexion_user" method="post">
+                            <form action="?controller=connexion&action=connexion_user" method="post" autocomplete="off">
                               <div class="mb-3">
                                 <label for="eMail" class="form-label">E-mail</label>
                                 <input type="email" class="form-control" id="eMail" aria-describedby="emailHelp" name="mail" required maxlength=50>

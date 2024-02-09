@@ -16,11 +16,11 @@ function passwordVerify($mdp,$mdp_confirm=false){
     if ($mdp_confirm==false){
         $mdp_confirm=$mdp;
     }
-    return trim(e($mdp))==$mdp && trim(e($mdp_confirm))==$mdp_confirm && $mdp==$mdp_confirm && preg_match('/^[A-Za-z0-9\*\[\]"#\$\(\)\+:;\{\}\|~\?@]{6,20}$/',$mdp) && preg_match('/[A-Z]/',$mdp) && preg_match('/[a-z]/',$mdp) && preg_match('/[0-9]/',$mdp) && preg_match('/[\*\[\]"#\$\(\)\+:;\{\}\|~?@]/',$mdp) && strlen($mdp)>=6 && strlen($mdp)<=20;
+    return trim(e($mdp))==$mdp && trim(e($mdp_confirm))==$mdp_confirm && $mdp==$mdp_confirm && preg_match('/^[A-Za-z0-9\*\[\]"#\$\(\)\+:;\{\}\|~\?@]{6,20}$/',$mdp) && strlen($mdp)>=6 && strlen($mdp)<=20;
 }
 
 function fsNameVerify($name){
-    return strlen($name)<=50 && strlen(trim($name))>0 && preg_match("/^([A-Za-z]+[0-9 ']*)+$/",$name);
+    return strlen($name)<=50 && strlen(trim($name))>0 && preg_match("/^([A-Za-z0-9]+[ ']*)+$/",$name);
 }
 
 function mailVerify($mail){
@@ -52,8 +52,21 @@ function affichageDate($date){
         $retour.="le ".$jour[2]." ".$mois[$jour[1]-1]." ".$jour[0];
     }
 	$heure=explode(":",$tout[1]);
-    $retour.=", à ".$heure[0]."h ".$heure[1]."min ".$heure[2]."s";
+    $retour.=", à ".$heure[0]./*"h "*/":".$heure[1]/*."min "*//*.$heure[2]."s"*/;
 	
+	return $retour;
+}
+
+
+function affichageCDate($date){
+    $retour="";
+
+    $mois=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+
+    $jour=explode("-",$date);
+
+    $retour=$jour[2]." ".$mois[$jour[1]-1]." ".$jour[0];
+    
 	return $retour;
 }
 ?>
