@@ -161,7 +161,7 @@ class Model
 	public function addUser($firstName,$lastName,$mail,$mdp,$mdp_confirm,$type){ 
 
 		date_default_timezone_set('Europe/Paris');
-		if (mailVerify($mail) && !($this->getMail($mail)) && passwordVerify($mdp,$mdp_confirm) && fsNameVerify($firstName) && fsNameVerify($lastName) && strlen($type)<=15 && ($type=="professionnel" || $type=="particulier" || $type=="joueur")){
+		if (mailVerify($mail) && !($this->getMail($mail)) && passwordVerify($mdp,$mdp_confirm) && fsNameVerify($firstName) && fsNameVerify($lastName) && strlen($type)<=15 && ($type=="professionnel" || $type=="particulier" || $type=="joueur" || ($type=="admin" && isset($_SESSION["User_Type"]) && $_SESSION["User_Type"]=="admin"))){
 			//$id=$this->getFirstPossibleID();
 			$dt = time();
 			$datec=date( "Y-m-d", $dt);

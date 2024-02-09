@@ -77,7 +77,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link active" href="#" aria-expanded="false">
+                <a class="sidebar-link active" href="?controller=chat" aria-expanded="false">
                   <span>
                     <i class="ti ti-users"></i>
                   </span>
@@ -199,11 +199,52 @@
         <!-- Header End -->
         <!-- --------------------------------------------------- -->
         <div class="container-fluid">
+          
+        <h1>Créer des Utilisateurs</h1></br></br></br>
         
-        <form action="?controller=chat&action=ajout_message" method="POST">
-            <label>Message :</label><input type="text" name="commentaire" maxlength="125" autocomplete="off" required  />
-            <input type="submit" value="Envoyer" />
-        </form>
+          <form action="?controller=admin&action=create_user" method="POST" autocomplete="off">
+                              <!--<div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>-->
+                              <div class="mb-4">
+                                <label for="firstName" class="form-label">Prénom</label> <!-- First Name -->
+                                <input type="text" class="form-control" id="firstName" name="firstName" required maxlength=50 placeholder="Ex: Jeanne D'Arc. Les lettres, chiffres, espaces, les - et ' sont acceptés">
+                              </div>
+                              <div class="mb-4">
+                                <label for="lastName" class="form-label">Nom</label> <!-- Last Name -->
+                                <input type="text" class="form-control" id="lastName" name="lastName" required maxlength=50 placeholder="Ex: Lair-Dupont. Les lettres, chiffres, espaces, les - et ' sont acceptés">
+                              </div>
+                              <div class="mb-4">
+                                <label for="eMail" class="form-label">E-mail</label> <!-- Mail -->
+                                <input type="email" class="form-control" id="eMail" name="mail" required maxlength=50 placeholder="Ex: exemple@gmail.com">
+                              </div>
+                              <div class="mb-4">
+                                <label for="types" class="form-label">Types</label>
+                                <select  class="form-control selectpicker" id="types" name="type">
+                                    <option value="particulier">Particulier</option>
+                                    <option value="joueur">Joueur</option>
+                                    <option value="professionnel">Professionnel</option>
+                                    <option value="admin">Admin</option>
+                                </select> 
+                                </div>
+                              <div class="mb-4">
+                                <label for="password1" class="form-label">Mot de passe</label> <!-- Password -->
+                                <input type="password" class="form-control" id="password1" name="mdp" required minlength=6 maxlength=20 placeholder='Autorisé : Lettres majuscules et minuscules, chiffres, caractères spéciaux (*,[,],",#,$,(,),+,:,;,{,},|,~,?)'>
+                              </div>
+                              <div class="mb-4">
+                                <label for="password2" class="form-label">Confirmation du mot de passe</label> <!-- Password Confirmation -->
+                                <input type="password" class="form-control" id="password2" name="mdp_confirm" required minlength=6 maxlength=20>
+                              </div>
+                              <div class="d-flex align-items-center justify-content-between mb-4">
+                                <input type="submit" class="btn btn-primary w-100 py-8 mb-4 rounded-2" id="submitButton" value="Créer l'Utilisateur"> <!-- Register -->
+                              </div>
+                              <?php 
+                                if (isset($message)) { ?>
+                                <p> <?=  $message ?></p>
+                                <?php }
+                                ?>
+               </form>     
             </div>
         
           </div>
@@ -222,6 +263,7 @@
     <!-- ---------------------------------------------- -->
     <!-- core files -->
     <!-- ---------------------------------------------- -->
+    <script src="Content/js/formulaire.js"></script>
     <script src="Content/js/app.min.js"></script>
     <script src="Content/js/app.init.js"></script>
     <script src="Content/js/app-style-switcher.js"></script>

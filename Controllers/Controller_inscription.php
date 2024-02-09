@@ -35,11 +35,9 @@ class Controller_inscription extends Controller
         }
         else if(!isset($_POST["mail"]) || !isset($_POST["firstName"]) || !isset($_POST["lastName"]) || !isset($_POST["type"]) || !isset($_POST["mdp"]) || !isset($_POST["mdp_confirm"] )){
             
-            $_SESSION["test"]="une mauv val";
             $this->action_page_inscription();
         }
         else{
-            $_SESSION["test"]="une mauv val 2";
             $data=["message"=>"Message d'erreur !!!"];
         }
         $this->render("page_inscription", $data);
