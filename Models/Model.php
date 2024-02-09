@@ -146,8 +146,12 @@ class Model
 		return $reqGet->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function getFaq() {
+		$reqGet = $this->bd->prepare('SELECT Faq_ID,Faq_Question, Faq_Response FROM Faq');
+		$reqGet->execute();
+		return $reqGet->fetchAll(PDO::FETCH_ASSOC);
+	}
 
-	
 
 
 
@@ -216,6 +220,16 @@ class Model
 		return false;
 	}
 
+	public function addFaq($Faq_Question,$Faq_Response){ 
+
+			$reqAdd=$this->bd->prepare("INSERT INTO Faq(Faq_Question,Faq_Response) value(:Faq_Question,:Faq_Response)");
+			$reqAdd->bindValue(':Faq_Question',$Faq_Question);
+			$reqAdd->bindValue(':Faq_Response',$Faq_Response);
+			$reqAdd ->execute();
+
+			return (bool) $reqAdd->rowCount();
+		
+	}
 
 	/**
 	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /

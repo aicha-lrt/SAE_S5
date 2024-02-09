@@ -74,6 +74,12 @@ CREATE TABLE Room (
 
 );
 
+CREATE TABLE Faq (
+    Faq_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Faq_Question VARCHAR(150),
+    Faq_Response VARCHAR(150)
+);
+
 
 
 ---- Contraintes d'intégrités
@@ -86,3 +92,4 @@ ALTER TABLE Envoie ADD FOREIGN KEY(Message_ID) REFERENCES Message(Message_ID);
 ALTER TABLE Envoie ADD FOREIGN KEY(User_ID) REFERENCES User(User_ID);
 ALTER TABLE Relier ADD FOREIGN KEY(Game_ID) REFERENCES Game(Game_ID);
 ALTER TABLE Relier ADD FOREIGN KEY(Topic_ID) REFERENCES Topic(Topic_ID);
+

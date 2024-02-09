@@ -370,7 +370,6 @@
     <!-- Import Js Files -->
     <!-- ---------------------------------------------- -->
     <script src="Content/libs/jquery/dist/jquery.min.js"></script>
-    <script src="Content/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="Content/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- ---------------------------------------------- -->
@@ -378,11 +377,7 @@
     <!-- ---------------------------------------------- -->
     <script src="Content/js/app.min.js"></script>
     <script src="Content/js/app.init.js"></script>
-    <script src="Content/js/app-style-switcher.js"></script>
-    <script src="Content/js/sidebarmenu.js"></script>
-    
     <script src="Content/js/custom.js"></script>
-    <script src="Content/libs/prismjs/prism.js"></script>
 
     <!-- ---------------------------------------------- -->
     <!-- current page js files -->
