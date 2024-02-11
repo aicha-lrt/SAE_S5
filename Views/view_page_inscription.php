@@ -5,8 +5,7 @@
     <title>X-Cape Gamyu</title>
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <!--  Favicon -->
     <link rel="shortcut icon" type="image/png" href="Content/img/logos/logo-complet.png" />
     

@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- --------------------------------------------------- -->
     <!-- Title -->
-    <!-- --------------------------------------------------- -->
     <title>X-Cape Gamyu</title>
-    <!-- --------------------------------------------------- -->
-    <!-- Required Meta Tag -->
-    <!-- --------------------------------------------------- -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- --------------------------------------------------- -->
+    <!-- Required Meta Tag -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <!-- Favicon -->
-    <!-- --------------------------------------------------- -->
     <link rel="shortcut icon" type="image/png" href="Content/img/logos/logo-complet.png" />
     
-    <!-- --------------------------------------------------- -->
     <!-- Core Css -->
-    <!-- --------------------------------------------------- -->
-    <!--<link rel = "stylesheet" href="Content/css/test.css"/>-->
     <link  id="themeColors"  rel="stylesheet" href="Content/css/style.css" />
   </head>
-
   <body>
     <!-- Preloader -->
     <div class="preloader">
       <img src="Content/img/logos/logo-complet.png" alt="loader" class="lds-ripple img-fluid" />
     </div>
-    <!-- --------------------------------------------------- -->
+
     <!-- Body Wrapper -->
-    <!-- --------------------------------------------------- -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
-      <!-- --------------------------------------------------- -->
       <!-- Sidebar -->
-      <!-- --------------------------------------------------- -->
       <aside class="left-sidebar">
         <!-- Sidebar scroll-->
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="?controller=accueil" class="text-nowrap logo-img">
-              <img src="Content/img/logos/logo-complet.png" class="dark-logo" width="120" alt="" />
-              <img src="Content/img/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
+              <img src="Content/img/logos/logo-complet.png"  width="120" alt="" />
             </a>
             <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8 text-muted"></i>
@@ -50,16 +36,13 @@
           <!-- Sidebar navigation-->
           <nav class="sidebar-nav scroll-sidebar" data-simplebar>
             <ul id="sidebarnav">
-              <!-- ============================= -->
+
               <!-- Home -->
-              <!-- ============================= -->
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Menu</span>
               </li>
-              <!-- =================== -->
               <!-- Dashboard -->
-              <!-- =================== -->
               <li class="sidebar-item">
                 <a class="sidebar-link" href="?controller=accueil" aria-expanded="false">
                   <span>
@@ -92,17 +75,6 @@
                   <span class="hide-menu">Recherche</span>
                 </a>
               </li>
-              <!--<li class="sidebar-item">
-                <a class="sidebar-link" href="./chat.html" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-message-dots"></i>
-                  </span>
-                  <span class="hide-menu">Messagerie</span>
-                </a>
-              </li>-->        
-              <!-- ============================= -->
-              <!-- Autre -->
-              <!-- ============================= -->
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Autre</span>
@@ -131,13 +103,10 @@
         <!-- End Sidebar scroll-->
       </aside>
 
-      <!-- --------------------------------------------------- -->
       <!-- Main Wrapper -->
-      <!-- --------------------------------------------------- -->
       <div class="body-wrapper">
-        <!-- --------------------------------------------------- -->
+
         <!-- Header Start -->
-        <!-- --------------------------------------------------- -->
         <header class="app-header"> 
         <nav class="navbar navbar-expand-lg navbar-light">
             <!--Burger Menu -->
@@ -254,27 +223,18 @@
 
 
     <!-- ---------------------------------------------- -->
-    <!-- Import Js Files -->
+    <!-- core files  -->
     <!-- ---------------------------------------------- -->
     <script src="Content/libs/jquery/dist/jquery.min.js"></script>
-    <script src="Content/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="Content/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- ---------------------------------------------- -->
-    <!-- core files -->
+    <!-- Import Js Files-->
     <!-- ---------------------------------------------- -->
-    <script src="Content/js/formulaire.js"></script>
     <script src="Content/js/app.min.js"></script>
-    <script src="Content/js/app.init.js"></script>
-    <script src="Content/js/app-style-switcher.js"></script>
-    <script src="Content/js/sidebarmenu.js"></script>
-    
+    <script src="Content/js/app.init.js"></script>  
     <script src="Content/js/custom.js"></script>
-    <script src="Content/libs/prismjs/prism.js"></script>
 
-    <!-- ---------------------------------------------- -->
-    <!-- current page js files -->
-    <!-- ---------------------------------------------- -->
   </body>
 </html>
 

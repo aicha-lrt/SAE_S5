@@ -40,9 +40,8 @@
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="?controller=accueil" class="text-nowrap logo-img">
-              <img src="Content/img/logos/logo-complet.png" class="dark-logo" width="120" alt="" />
-              <img src="Content/img/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
-            </a>
+              <img src="Content/img/logos/logo-complet.png" width="120" alt="" />
+             </a>
             <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8 text-muted"></i>
             </div>
@@ -92,17 +91,6 @@
                   <span class="hide-menu">Recherche</span>
                 </a>
               </li>
-              <!--<li class="sidebar-item">
-                <a class="sidebar-link" href="./chat.html" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-message-dots"></i>
-                  </span>
-                  <span class="hide-menu">Messagerie</span>
-                </a>
-              </li>-->        
-              <!-- ============================= -->
-              <!-- Autre -->
-              <!-- ============================= -->
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                 <span class="hide-menu">Autre</span>
@@ -266,20 +254,17 @@
        
 
     <!-- -------------------------------------------- -->
-    <!-- Import Js Files -->
+    <!-- core files -->
     <!-- ---------------------------------------------- -->
     <script src="Content/libs/jquery/dist/jquery.min.js"></script>
     <script src="Content/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- ---------------------------------------------- -->
-    <!-- core files -->
+    <!-- Import Js Files -->
     <!-- ---------------------------------------------- -->
     <script src="Content/js/app.min.js"></script>
     <script src="Content/js/app.init.js"></script>
     <script src="Content/js/custom.js"></script>
 
-    <!-- ---------------------------------------------- -->
-    <!-- current page js files -->
-    <!-- ---------------------------------------------- -->
   </body>
 </html>

@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  "use strict";
+  $(".preloader").fadeOut();
   // Show modal
   $("#bs-example-modal-lg").modal("show");
 
@@ -32,7 +34,11 @@ $(document).ready(function () {
   function setupAnimatedCharacter() {
     const frames = [];
     for (let i = 1; i < 29; i++) {
-      frames.push(PIXI.Texture.from(`Content/img/spatialisationjeu/sprites/sprite-${i}.png`));
+      frames.push(
+        PIXI.Texture.from(
+          `Content/img/spatialisationjeu/sprites/sprite-${i}.png`
+        )
+      );
     }
 
     const animations = {

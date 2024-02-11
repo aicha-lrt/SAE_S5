@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- --------------------------------------------------- -->
+
     <!-- Title -->
-    <!-- --------------------------------------------------- -->
     <title>X-Cape Gamyu</title>
-    <!-- --------------------------------------------------- -->
+
     <!-- Required Meta Tag -->
-    <!-- --------------------------------------------------- -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- --------------------------------------------------- -->
     <!-- Favicon -->
@@ -42,8 +39,7 @@
           <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="?controller=accueil" class="text-nowrap logo-img">
               <img src="Content/img/logos/logo-complet.png" class="dark-logo" width="120" alt="" />
-              <img src="Content/img/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
-            </a>
+                </a>
             <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8 text-muted"></i>
             </div>
@@ -336,22 +332,16 @@
           </div>
         </div>
     <!-- ---------------------------------------------- -->
-    <!-- Import Js Files -->
+    <!-- core files -->
     <!-- ---------------------------------------------- -->
     <script src="Content/libs/jquery/dist/jquery.min.js"></script>
     <script src="Content/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- ---------------------------------------------- -->
-    <!-- core files -->
+    <!-- Import Js Files -->
     <!-- ---------------------------------------------- -->
     <script src="Content/js/app.min.js"></script>
     <script src="Content/js/app.init.js"></script>
-    <script src="Content/js/custom.js"></script>
-
-    <!-- ---------------------------------------------- -->
-    <!-- current page js files -->
-    <!-- ---------------------------------------------- -->
-
     <script src="Content/js/spajeu.js"></script>
     </body>
 </html>
