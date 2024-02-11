@@ -10,10 +10,11 @@ class Controller_inscription extends Controller
 		Cette fonction est de complexité O(1) c'est a dire constante.
 		 */
 
-        $data = [
-			"title"=>"Page d'Accueil",
-        ];
-        $this->render("page_inscription", $data);
+         
+        if(!isset($_SESSION["mail"])){
+            $this->render("page_inscription");
+        }
+    header("Location: ./");
     }
 
     public function action_inscription()

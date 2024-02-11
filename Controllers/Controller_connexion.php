@@ -10,7 +10,11 @@ class Controller_connexion extends Controller{
     Permet d'accéder a la page d'accueil.
     Cette fonction est de complexité O(1) c'est a dire constante.
     */
-    $this->render("page_connexion", []);
+    if(!isset($_SESSION["mail"])){
+         $this->render("page_connexion", []);
+        }
+    header("Location: ./");
+    
     }
 
 
